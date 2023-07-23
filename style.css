@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+    --ff--alata: 'Alata', sans-serif;
+    --ff--josefin: 'Josefin Sans', sans-serif;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+source,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+header {
+    background-image: url(images/desktop/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem;
+}
+
+.navbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+
+}
+
+.toggle_btn {
+    color: hsl(0, 0%, 100%);
+    display: none;
+    font-size: 1.7rem;
+}
+
+.close_btn {
+    font-size: 1.7rem;
+    color: hsl(0, 0%, 100%);
+}
+
+.list {
+    display: flex;
+    gap: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+.list a {
+    color: hsl(0, 0%, 100%);
+    font-family: var(--ff--alata);
+    text-decoration: none;
+    position: relative;
+}
+
+.list a:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.4em;
+    height: 3px;
+    width: 70%;
+    background: white;
+    margin: auto;
+    border-radius: 1000px;
+
+}
+
+.navbar .logo {
+    width: 150px;
+}
+
+/* dropdown */
+.dropdown_menu {
+    display: none;
+    inset: 0;
+    position: absolute;
+    top: 0;
+    background-color: hsl(0, 0%, 0%);
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    padding: 2rem;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.dropdown_menu.open {
+    transform: translate(0%, -100%);
+}
+
+
+.dropdown_menu ul {
+    display: flex;
+    width: fit-content;
+    padding: 0;
+    margin-top: 6rem;
+    flex-direction: column;
+    font-size: 2rem;
+    gap: 1.5rem;
+
+}
+
+.dropdown_menu ul a {
+    font-family: var(--ff--josefin);
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.dropdown_menu .subnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown_menu .subnav .logo {
+    width: 150px;
+}
+
+/* hero */
+.hero h1 {
+    font-size: 2.5rem;
+    border: 2px solid white;
+    color: hsl(0, 0%, 100%);
+    font-family: var(--ff--josefin);
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    line-height: 1.5;
+}
+
+.hero {
+    margin: 10rem auto;
+}
+
+/* ARTICLE */
+main {
+    margin: 0 5%;
+}
+
+.leader {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    gap: 2rem;
+}
+
+.leader--text h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-family: var(--ff--josefin);
+    font-weight: 300;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.leader--text p {
+    color: hsl(0, 0%, 41%);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: auto;
+    text-align: center;
+    width: 90%;
+}
+
+
+/* GRID */
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+}
+
+.grid h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: var(--ff--josefin);
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.grid-box {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid--container {
+    position: relative;
+    color: hsl(0, 0%, 100%);
+}
+
+
+
+
+.grid--container p {
+    width: 40%;
+    position: absolute;
+    font-size: 1.5rem;
+    margin: 1.8rem;
+    z-index: 3;
+    bottom: 0;
+    text-transform: uppercase;
+    font-family: var(--ff--josefin);
+    font-weight: 300;
+}
+
+.grid button {
+    cursor: pointer;
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    border: 1.8px solid hsl(0, 0%, 0%);
+    padding: .5rem 3rem;
+    margin: auto;
+}
+
+.grid button a {
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-family: var(--ff--alata);
+    font-weight: 400;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.grid button a:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+.grid button:hover {
+    background-color: hsl(0, 0%, 0%);
+}
+
+footer {
+    background-color: hsl(0, 0%, 0%);
+    display: grid;
+    padding: 4rem 0;
+
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer--links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 4rem;
+
+}
+
+footer .footer--links li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: hsl(0, 0%, 100%);
+    font-family: var(--ff--alata);
+    font-weight: 400;
+}
+
+footer .footer-media {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+footer .footer-content p {
+    color: hsl(0, 0%, 41%);
+    font-family: var(--ff--alata);
+}
+
+.footer--logo {
+    width: 11rem;
+    margin-bottom: 4rem;
+}
+
+@media(min-width:750px) {
+    header {
+        padding: 2rem 5rem;
+    }
+
+    .navbar {
+        margin: 0;
+    }
+
+    .hero h1 {
+        max-width: 550px;
+        padding: .5rem;
+        font-size: 3.5rem;
+    }
+
+    #interactive {
+        content: url(images/desktop/image-interactive.jpg);
+        width: 80%;
+    }
+
+    .leader {
+        gap: 0;
+        align-items: flex-start;
+        position: relative;
+
+    }
+
+    main {
+        max-width: min(88%, 1000px);
+        margin: auto;
+    }
+
+    .leader--text {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 60%;
+        padding: 3rem;
+        padding-bottom: 3rem;
+        padding-bottom: 3rem;
+        padding-bottom: 0.2rem;
+        background: white;
+        left: 50%;
+    }
+
+    .leader--text h2 {
+        font-size: 2.5rem;
+        text-align: left;
+        margin-top: 0rem;
+        margin-bottom: 1rem;
+        margin-left: 0rem;
+    }
+
+    .leader--text p {
+        width: 90%;
+        margin: 0;
+        text-align: unset;
+        font-family: var(--ff--alata);
+        font-size: 1.1rem;
+    }
+
+    .grid-box {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .deep img {
+        content: url(images/desktop/image-deep-earth.jpg);
+    }
+
+    .arcade img {
+        content: url(images/desktop/image-night-arcade.jpg);
+    }
+
+    .soccer img {
+        content: url(images/desktop/image-soccer-team.jpg);
+    }
+
+    .gridi img {
+        content: url(images/desktop/image-grid.jpg);
+    }
+
+    .above img {
+        content: url(images/desktop/image-from-above.jpg);
+    }
+
+    .borealis img {
+        content: url(images/desktop/image-pocket-borealis.jpg);
+    }
+
+    .curiosity img {
+        content: url(images/desktop/image-curiosity.jpg);
+    }
+
+    .fisheye img {
+        content: url(images/desktop/image-fisheye.jpg);
+    }
+
+    footer .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 5%;
+    }
+
+    .footer--logo {
+        margin-bottom: 1rem;
+    }
+
+    footer .footer--links {
+        flex-direction: row;
+        gap: 2rem;
+        margin-bottom: 0;
+    }
+
+    footer .footer-media {
+        justify-content: flex-end;
+    }
+}
+
+@media(max-width:750px) {
+    .list {
+        display: none;
+    }
+
+    .toggle_btn {
+        display: block;
+    }
+
+    .navbar {
+        margin: 0;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+    header {
+        background-image: url(images/mobile/image-hero.jpg);
+    }
+
+}
